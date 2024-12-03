@@ -34,6 +34,9 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	runtimeOnly 'com.h2database:h2'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	testImplementation 'com.jayway.jsonpath:json-path'
+	testImplementation 'org.springframework:spring-test'
 }
 
 tasks.named('test') {
