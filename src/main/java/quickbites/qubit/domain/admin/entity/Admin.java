@@ -1,10 +1,10 @@
-package quickbites.qubit.domain.Admin;
+package quickbites.qubit.domain.admin.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import quickbites.qubit.domain.User.Role;
+import quickbites.qubit.domain.user.entity.Role;
 
 import java.util.UUID;
 

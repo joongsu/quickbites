@@ -1,14 +1,13 @@
-package quickbites.qubit.domain.Menu;
+package quickbites.qubit.domain.menu.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-import quickbites.qubit.domain.OrderMenu.OrderMenu;
-import quickbites.qubit.domain.Store.Store;
+import quickbites.qubit.domain.ordermenu.entity.OrderMenu;
+import quickbites.qubit.domain.store.entity.Store;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import static lombok.AccessLevel.PROTECTED;
 
@@ -16,8 +15,8 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 public class Menu {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String name;    // 메뉴명
     private int price;  // 메뉴 가격
