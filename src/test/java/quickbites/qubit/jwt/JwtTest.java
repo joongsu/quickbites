@@ -2,7 +2,7 @@ package quickbites.qubit.jwt;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import quickbites.qubit.domain.User.Role;
+import quickbites.qubit.domain.user.entity.Role;
 import quickbites.qubit.global.util.jwt.JwtUtil;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -30,8 +30,8 @@ public class JwtTest {
     @Test
     void generateTokenTest(){
 
-        String accessToken = jwtUtil.generateAccessToken("hello", Role.USER);
-        String refreshToken = jwtUtil.generateRefreshToken("hello", Role.USER);
+        String accessToken = jwtUtil.generateAccessToken("hello", Role.USER.toString());
+        String refreshToken = jwtUtil.generateRefreshToken("hello", Role.USER.toString());
         System.out.println("token = " + accessToken);
         System.out.println("refreshToken = " + refreshToken);
     }
