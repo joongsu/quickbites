@@ -1,4 +1,4 @@
-package quickbites.qubit.domain.User;
+package quickbites.qubit.domain.user.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -19,17 +19,18 @@ public class User {
 
     private String name;
 
-    private String providerUserInfo;
-
+    //private String providerUserInfo;
+    private String userId;
     @Enumerated(EnumType.STRING)
     private Role role;
 
     private String email;
 
     @Builder
-    public User(String name, String provider, String providerId, String email) {
+    public User(String name, String userId, String email) {
         this.name = name;
-        this.providerUserInfo = provider + " " + providerId;
+        this.userId = userId;
+        //this.providerUserInfo = provider + " " + providerId;
         this.email = email;
         this.role = Role.USER;
     }

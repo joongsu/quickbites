@@ -1,10 +1,10 @@
-package quickbites.qubit.domain.Order;
+package quickbites.qubit.domain.order.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-import quickbites.qubit.domain.OrderMenu.OrderMenu;
-import quickbites.qubit.domain.Store.Store;
+import quickbites.qubit.domain.ordermenu.entity.OrderMenu;
+import quickbites.qubit.domain.store.entity.Store;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

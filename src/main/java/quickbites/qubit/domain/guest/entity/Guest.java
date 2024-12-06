@@ -1,31 +1,32 @@
-package quickbites.qubit.domain.Admin;
+package quickbites.qubit.domain.guest.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import quickbites.qubit.domain.User.Role;
+import quickbites.qubit.domain.user.entity.Role;
 
 import java.util.UUID;
 
-@Getter
 @Entity
+@Getter
 @NoArgsConstructor
-public class Admin {
+public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     UUID id;
 
-    String adminId;
+    String name;
+    String telephoneNumber;
     String password;
 
     @Enumerated(EnumType.STRING)
     Role role;
 
     @Builder
-    public Admin(String adminId, String password) {
-        this.adminId = adminId;
+    public Guest(String telephoneNumber, String password, String name) {
+        this.telephoneNumber = telephoneNumber;
         this.password = password;
-        this.role = Role.ADMIN;
+        this.name = name;
     }
 }

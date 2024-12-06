@@ -1,11 +1,11 @@
-package quickbites.qubit.domain.Owner;
+package quickbites.qubit.domain.owner.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import quickbites.qubit.domain.Store.Store;
-import quickbites.qubit.domain.User.Role;
+import quickbites.qubit.domain.store.entity.Store;
+import quickbites.qubit.domain.user.entity.Role;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,8 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    private String ownerId;
+    private String password;
     private String name;
     private String telephoneNumber;
 

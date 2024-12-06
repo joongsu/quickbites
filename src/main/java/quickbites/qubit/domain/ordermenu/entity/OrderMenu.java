@@ -1,12 +1,12 @@
-package quickbites.qubit.domain.OrderMenu;
+package quickbites.qubit.domain.ordermenu.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import quickbites.qubit.domain.Menu.Menu;
-import quickbites.qubit.domain.Order.Order;
+import quickbites.qubit.domain.menu.entity.Menu;
+import quickbites.qubit.domain.order.entity.Order;
 
 import java.util.UUID;
 

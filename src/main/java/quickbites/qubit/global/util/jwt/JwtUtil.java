@@ -4,7 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import quickbites.qubit.domain.User.Role;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -30,7 +29,7 @@ public class JwtUtil {
         this.issuer = issuer;
     }
 
-    public String generateAccessToken(String userId, Role role){
+    public String generateAccessToken(String userId, String role){
         return Jwts.builder()
                 .subject(userId)
                 .issuedAt(new Date())
@@ -42,7 +41,7 @@ public class JwtUtil {
                 .compact();
     }
 
-    public String generateRefreshToken(String userId, Role role){
+    public String generateRefreshToken(String userId, String role){
         return Jwts.builder()
                 .subject(userId)
                 .issuedAt(new Date())
