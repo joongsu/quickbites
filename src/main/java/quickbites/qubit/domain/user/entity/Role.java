@@ -1,4 +1,4 @@
-package quickbites.qubit.domain.User;
+package quickbites.qubit.domain.user.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
