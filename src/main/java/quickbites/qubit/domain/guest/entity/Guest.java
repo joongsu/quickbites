@@ -24,9 +24,15 @@ public class Guest {
     Role role;
 
     @Builder
-    public Guest(String telephoneNumber, String password, String name) {
+    public Guest(
+            String telephoneNumber,
+            String password,
+            String name,
+            Role role
+    ) {
         this.telephoneNumber = telephoneNumber;
         this.password = password;
         this.name = name;
+        this.role = role;
     }
 }
