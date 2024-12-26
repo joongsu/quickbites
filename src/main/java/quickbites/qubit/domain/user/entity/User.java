@@ -21,17 +21,25 @@ public class User {
 
     //private String providerUserInfo;
     private String userId;
+
+    private String email;
+    private String telephoneNumber;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    private String email;
-
     @Builder
-    public User(String name, String userId, String email) {
+    public User(
+            String name,
+            String userId,
+            String email,
+            String telephoneNumber
+            ) {
         this.name = name;
         this.userId = userId;
         //this.providerUserInfo = provider + " " + providerId;
         this.email = email;
+        this.telephoneNumber = telephoneNumber;
         this.role = Role.USER;
     }
 

@@ -8,4 +8,7 @@ import java.util.UUID;
 
 public interface GuestRepository extends JpaRepository<Guest, UUID> {
     Optional<Guest> findByTelephoneNumber(String telephoneNumber);
+    Optional<Guest> findByName(String name);
+
+    boolean existsByName(String name);
 }

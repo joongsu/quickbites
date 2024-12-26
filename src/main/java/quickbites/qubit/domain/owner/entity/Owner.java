@@ -33,8 +33,17 @@ public class Owner {
     Role role;
 
     @Builder
-    public Owner(String name, String telephoneNumber) {
+    public Owner(
+            String ownerId,
+            String password,
+            String name,
+            String telephoneNumber,
+            Role role
+            ) {
+        this.ownerId = ownerId;
+        this.password = password;
         this.name = name;
         this.telephoneNumber = telephoneNumber;
+        this.role = role;
     }
 }
