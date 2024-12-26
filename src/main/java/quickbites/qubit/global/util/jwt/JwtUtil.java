@@ -18,12 +18,12 @@ public class JwtUtil {
     private final String issuer;
 
     public JwtUtil(
-            @Value("${JWT_SECRET_KEY)")SecretKey secretKey,
-            @Value("${JWT_ACCESS_EXPIRATION")Duration accessTokenDuration,
-            @Value("${JWT_REFRESH_EXPIRATION")Duration refreshTokenDuration,
+            @Value("${JWT_SECRET_KEY}") String secretKey,
+            @Value("${JWT_ACCESS_EXPIRATION}")Duration accessTokenDuration,
+            @Value("${JWT_REFRESH_EXPIRATION}")Duration refreshTokenDuration,
             @Value("${JWT_ISSUER}") String issuer
     ){
-        this.secretKey = new SecretKeySpec(secretKey.getEncoded(), Jwts.SIG.HS256.key().build().getAlgorithm());
+        this.secretKey = new SecretKeySpec(secretKey.getBytes(), Jwts.SIG.HS256.key().build().getAlgorithm());
         this.accessTokenDuration = accessTokenDuration;
         this.refreshTokenDuration = refreshTokenDuration;
         this.issuer = issuer;
