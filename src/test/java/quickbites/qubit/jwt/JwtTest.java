@@ -1,5 +1,6 @@
 package quickbites.qubit.jwt;
 
+import io.jsonwebtoken.Jwts;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import quickbites.qubit.domain.user.entity.Role;
@@ -17,10 +18,10 @@ public class JwtTest {
 
     @BeforeEach
     void setup() {
-        byte[] keyBytes = "GjCU1g8/AbJhSzj4McaCKa7Amu+Fz1N4w8jJfZanEIk=".getBytes(); // 테스트용 키
+        String secretKey = "GjCU1g8/AbJhSzj4McaCKa7Amu+Fz1N4w8jJfZanEIk="; // 테스트용 키
 
         jwtUtil = new JwtUtil(
-                new SecretKeySpec(keyBytes, "HmacSHA256"),
+                secretKey,
                 Duration.ofDays(10000),
                 Duration.ofDays(7),
                 "issuer"
