@@ -8,4 +8,6 @@ import java.util.UUID;
 
 public interface OwnerRepository extends JpaRepository<Owner, UUID> {
     Optional<Owner> findByOwnerId(String OwnerId);
+    boolean existsByOwnerId(String ownerId);
+
 }
