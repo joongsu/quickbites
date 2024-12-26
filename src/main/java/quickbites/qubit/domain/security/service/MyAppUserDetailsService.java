@@ -39,7 +39,7 @@ public class MyAppUserDetailsService implements UserDetailsService {
                 return new AppUserDetails(user);
             }
             case "USER_GUEST" -> {
-                Guest guest = guestRepository.findByTelephoneNumber(id)
+                Guest guest = guestRepository.findByName(id)
                         .orElseThrow(() -> new CustomException(ErrorType.NOT_FOUND));
 
                 return new GuestDetails(guest);
